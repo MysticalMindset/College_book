@@ -2,6 +2,8 @@
 
 Welcome! This is my personal collection of college notes, covering everything I’ve studied so far. It includes organized, well-formatted notes from multiple years and courses, updated and improved over time.
 
+From Semester 1-4, Notes are a little not great. But continuation semester will improve.
+
 ## 🗂️ What's Inside
 
 - Notes organized by year and subject/module  
