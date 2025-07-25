@@ -20,8 +20,10 @@ Mechatronics Project
 
 Instrumentation & Measurement
 
-Fluid Power
+Fluid Power*
 
 Microcontrollers
 
 Numerical Methods
+
+*New Name, old name was Pneumatics
