@@ -1,8 +1,8 @@
 Semester 3:
 ------------
-Differential Equations
+Differential Equations (Not Added: Class was in Website Formula)
 
-Engineering Project Managment
+Engineering Project Managment (Not Added)
 
 Electric Circuits Analysis
 
@@ -10,13 +10,13 @@ Applied Mechanics
 
 Computer Programming
 
-Digital Electronics
+Digital Electronics (Not Added: Teacher was Bad)
 
 Semester 4:
 ------------
-Earth Science
+Earth Science (Not Added: Took different Class)
 
-Mechatronics Project
+Mechatronics Project (Projects Area)
 
 Instrumentation & Measurement
 
