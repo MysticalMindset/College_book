@@ -1,6 +1,6 @@
 Semester 3:
 ------------
-Differential Equations (Not Added: Class was in Website Formula)
+Differential Equations (Not Added: Website Class)
 
 Engineering Project Managment (Not Added)
 
