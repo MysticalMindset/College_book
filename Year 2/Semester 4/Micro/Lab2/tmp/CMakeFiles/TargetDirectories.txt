@@ -1,0 +1,8 @@
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/CMakeFiles/database.dir
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/CMakeFiles/Lab_1.Debug+TM4C123GH6PM.dir
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/CMakeFiles/Lab_1.Debug+TM4C123GH6PM-build.dir
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/CMakeFiles/Lab_1.Debug+TM4C123GH6PM-configure.dir
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/CMakeFiles/Lab_1.Debug+TM4C123GH6PM-executes.dir
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/CMakeFiles/Lab_1.Debug+TM4C123GH6PM-database.dir
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/CMakeFiles/edit_cache.dir
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/CMakeFiles/rebuild_cache.dir

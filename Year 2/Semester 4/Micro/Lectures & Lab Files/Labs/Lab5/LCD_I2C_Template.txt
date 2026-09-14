@@ -1,0 +1,154 @@
+#include <stdint.h>
+
+#define SYSCTL_RCGCI2C_R     (*((volatile uint32_t *)0x400FE620))
+#define SYSCTL_RCGCGPIO_R    (*((volatile uint32_t *)0x400FE608))
+#define SYSCTL_PRGPIO_R      (*((volatile uint32_t *)0x400FEA08))
+#define SYSCTL_PRI2C_R       (*((volatile uint32_t *)0x400FEA20))
+
+#define GPIO_PORTB_AFSEL_R   (*((volatile uint32_t *)0x40005420))
+#define GPIO_PORTB_DEN_R     (*((volatile uint32_t *)0x4000551C))
+#define GPIO_PORTB_ODR_R     (*((volatile uint32_t *)0x4000550C))
+#define GPIO_PORTB_PCTL_R    (*((volatile uint32_t *)0x4000552C))
+#define GPIO_PORTB_AMSEL_R   (*((volatile uint32_t *)0x40005528))
+
+#define I2C0_MSA_R           (*((volatile uint32_t *)0x40020000))
+#define I2C0_MCS_R           (*((volatile uint32_t *)0x40020004))
+#define I2C0_MDR_R           (*((volatile uint32_t *)0x40020008))
+#define I2C0_MTPR_R          (*((volatile uint32_t *)0x4002000C))
+#define I2C0_MCR_R           (*((volatile uint32_t *)0x40020020))
+
+#define LCD_ADDR 0x27
+
+#define RS 0x01
+#define RW 0x02
+#define EN 0x04
+#define BL 0x08
+
+void delayMs(int n);
+void I2C0_Init(void);
+void I2C0_WriteByte(uint8_t slave_addr, uint8_t data);
+void LCD_ExpanderWrite(uint8_t data);
+void LCD_PulseEnable(uint8_t data);
+void LCD_Write4Bits(uint8_t nibble);
+void LCD_SendCommand(uint8_t cmd);
+void LCD_SendData(uint8_t data);
+void LCD_Init(void);
+void LCD_Print(char *str);
+
+void delayMs(int n)
+{
+    volatile int i, j;
+    for(i = 0; i < n; i++)
+        for(j = 0; j < 3180; j++);
+}
+
+void I2C0_Init(void)
+{
+    SYSCTL_RCGCI2C_R |= 0x01;
+    SYSCTL_RCGCGPIO_R |= 0x02;
+
+    while((SYSCTL_PRGPIO_R & 0x02) == 0);
+    while((SYSCTL_PRI2C_R & 0x01) == 0);
+
+    GPIO_PORTB_AFSEL_R |= 0x0C;
+    GPIO_PORTB_DEN_R   |= 0x0C;
+    GPIO_PORTB_ODR_R   |= 0x08;
+    GPIO_PORTB_AMSEL_R &= ~0x0C;
+
+    GPIO_PORTB_PCTL_R &= ~0x0000FF00;
+    GPIO_PORTB_PCTL_R |=  0x00003300;
+
+    I2C0_MCR_R = 0x10;
+    I2C0_MTPR_R = 7;
+}
+
+void I2C0_WriteByte(uint8_t slave_addr, uint8_t data)
+{
+    I2C0_MSA_R = (slave_addr << 1) & ~0x01;
+    I2C0_MDR_R = data;
+    I2C0_MCS_R = 0x07;
+
+    while(I2C0_MCS_R & 0x01);
+
+    while(I2C0_MCS_R & 0x02);
+}
+
+void LCD_ExpanderWrite(uint8_t data)
+{
+    I2C0_WriteByte(LCD_ADDR, data | BL);
+}
+
+void LCD_PulseEnable(uint8_t data)
+{
+    LCD_ExpanderWrite(data | EN);
+    delayMs(1);
+    LCD_ExpanderWrite(data & ~EN);
+    delayMs(1);
+}
+
+void LCD_Write4Bits(uint8_t nibble)
+{
+    LCD_ExpanderWrite(nibble);
+    LCD_PulseEnable(nibble);
+}
+
+void LCD_SendCommand(uint8_t cmd)
+{
+    uint8_t high = cmd & 0xF0;
+    uint8_t low  = (cmd << 4) & 0xF0;
+
+    LCD_Write4Bits(high);
+    LCD_Write4Bits(low);
+    delayMs(2);
+}
+
+void LCD_SendData(uint8_t data)
+{
+    uint8_t high = (data & 0xF0) | RS;
+    uint8_t low  = ((data << 4) & 0xF0) | RS;
+
+    LCD_Write4Bits(high);
+    LCD_Write4Bits(low);
+    delayMs(2);
+}
+
+void LCD_Init(void)
+{
+    delayMs(50);
+
+    LCD_Write4Bits(0x30);
+    delayMs(5);
+    LCD_Write4Bits(0x30);
+    delayMs(1);
+    LCD_Write4Bits(0x30);
+    delayMs(1);
+    LCD_Write4Bits(0x20);
+
+    LCD_SendCommand(0x28);
+    LCD_SendCommand(0x0C);
+    LCD_SendCommand(0x06);
+    LCD_SendCommand(0x01);
+    delayMs(2);
+}
+
+void LCD_Print(char *str)
+{
+    while(*str)
+    {
+        LCD_SendData(*str++);
+    }
+}
+
+int main(void)
+{
+    I2C0_Init();
+    LCD_Init();
+
+    LCD_SendCommand(0x80);
+    LCD_Print("Hello Tiva");
+
+    
+    while(1)
+    {
+    }
+}

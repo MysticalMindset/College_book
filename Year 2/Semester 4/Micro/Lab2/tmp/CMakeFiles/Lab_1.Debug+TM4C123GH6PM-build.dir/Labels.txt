@@ -1,0 +1,11 @@
+# Target labels
+ Lab_1.Debug+TM4C123GH6PM
+# Source files and their labels
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/CMakeFiles/Lab_1.Debug+TM4C123GH6PM-build
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/CMakeFiles/Lab_1.Debug+TM4C123GH6PM-build.rule
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/Lab_1.Debug+TM4C123GH6PM/src/Lab_1.Debug+TM4C123GH6PM-stamp/Lab_1.Debug+TM4C123GH6PM-build.rule
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/Lab_1.Debug+TM4C123GH6PM/src/Lab_1.Debug+TM4C123GH6PM-stamp/Lab_1.Debug+TM4C123GH6PM-configure.rule
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/Lab_1.Debug+TM4C123GH6PM/src/Lab_1.Debug+TM4C123GH6PM-stamp/Lab_1.Debug+TM4C123GH6PM-patch.rule
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/Lab_1.Debug+TM4C123GH6PM/src/Lab_1.Debug+TM4C123GH6PM-stamp/Lab_1.Debug+TM4C123GH6PM-update.rule
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/Lab_1.Debug+TM4C123GH6PM/src/Lab_1.Debug+TM4C123GH6PM-stamp/Lab_1.Debug+TM4C123GH6PM-download.rule
+C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/Lab_1.Debug+TM4C123GH6PM/src/Lab_1.Debug+TM4C123GH6PM-stamp/Lab_1.Debug+TM4C123GH6PM-mkdir.rule
