@@ -1,0 +1,2 @@
+cd C:\dev\ros2-windows
+pixi shell
