@@ -1,6 +1,0 @@
-C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/1/CMakeFiles/database.dir
-C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/1/CMakeFiles/Lab_1.Debug+TM4C123GH6PM.dir
-C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/1/CMakeFiles/Group_Source_Files.dir
-C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/1/CMakeFiles/Keil_Device_Startup_1_0_1.dir
-C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/1/CMakeFiles/edit_cache.dir
-C:/Users/Murl0/Documents/Workzone/College_book/Year 2/Semester 4/Micro/Lab2/tmp/1/CMakeFiles/rebuild_cache.dir
