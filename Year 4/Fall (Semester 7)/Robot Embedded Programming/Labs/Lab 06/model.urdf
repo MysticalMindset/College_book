@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!-- http://wiki.ros.org/urdf/XML/link  -->
+<robot name="simple_robot">
+
+<link name="base_link">
+	<visual>
+		<geometry>
+		   <mesh filename="package://demo_robot/mesh/base_link.dae" /> 
+        </geometry>
+
+	<!--origin - the reference frame of the visual element with respect to the reference frame of the link -->
+	<!-- rpy - r is roll, p-pitch and y -yaw -->
+	<!-- xyz - x,y,z -offsets  -->
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+	</visual>
+</link>
+
+
+<joint name="joint_1" type="revolute">
+    <parent link="base_link"/>
+    <child link="first_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.16" />
+    <axis xyz="0 0 1"/>
+    <limit effort="300" velocity="2.0" lower="-1.57" upper="1.57" />
+</joint>
+
+<link name="first_link">
+    <visual>
+    <geometry>
+        <mesh filename="package://demo_robot/mesh/first_link.dae" /> 
+    </geometry>
+    <origin rpy="0 0 0" xyz="0 0 0 " />
+    </visual>
+</link>
+
+
+<joint name="joint_2" type="revolute">
+    <parent link="first_link"/>
+    <child link="second_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.24"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="300" velocity="2.0" lower="-1.57" upper="1.57" />
+</joint>
+
+<link name="second_link">
+    <visual>
+    <geometry>
+       <mesh filename="package://demo_robot/mesh/second_link.dae" /> 
+    </geometry>
+    <origin rpy="0 0 0" xyz="0 0 -0.1" />
+    </visual>
+</link>
+
+<joint name="joint_3" type="revolute">
+    <parent link="second_link"/>
+    <child link="third_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.94"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="300" velocity="2.0" lower="-1.57" upper="1.57" />
+</joint>
+
+<link name="third_link">
+    <visual>
+    <geometry>
+       <mesh filename="package://demo_robot/mesh/third_link.dae" /> 
+    </geometry>
+    <origin rpy="0 0 0" xyz="0 0 -0.1" />
+    </visual>
+</link>
+
+</robot> 
